@@ -1,0 +1,9 @@
+.idea/
+.vs/
+*.DotSettings.user
+**/bin/
+**/obj/
+TestResults/
+.env
+.env.*
+!.env.example

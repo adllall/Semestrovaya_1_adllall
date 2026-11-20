@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Избранное — Респонс</title>
+    <link rel="stylesheet" href="/css/gallery.css">
+</head>
+<body>
+<header class="header">
+    <div class="header-top">
+        <a class="logo" href="/">Респонс</a>
+        <nav aria-label="Аккаунт">
+            <form method="post" action="/logout">
+                <input type="hidden" name="csrf" value="{{CsrfToken}}">
+                <button class="link-button" type="submit">Выйти <span class="sr-only">из аккаунта {{Username}}</span></button>
+            </form>
+        </nav>
+    </div>
+</header>
+<main class="main detail-page">
+    <a class="back-link" href="/">← К галерее</a>
+    <h1>Избранное</h1>
+    {{#if Favorites}}
+    <ul class="entry-list">
+        {{#each Favorites}}
+        <li class="panel entry">
+            <div>
+                <a href="/cards/{{CardId}}">{{Title}}</a>
+                {{#if Note}}<p class="note">{{Note}}</p>{{/if}}
+            </div>
+            <form method="post" action="/favorites/remove/{{CardId}}">
+                <input type="hidden" name="csrf" value="{{CsrfToken}}">
+                <button class="danger" type="submit">Убрать из избранного</button>
+            </form>
+        </li>
+        {{/each}}
+    </ul>
+    {{else}}
+    <p class="muted">Откройте карточку в галерее, чтобы добавить её в избранное.</p>
+    {{/if}}
+</main>
+</body>
+</html>

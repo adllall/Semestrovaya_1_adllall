@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Галерея карт — Респонс</title>
+    <link rel="stylesheet" href="/css/gallery.css">
+    <script src="/js/gallery.js" defer></script>
+</head>
+<body>
+<header class="header">
+    <div class="header-top">
+        <a class="logo" href="/">Респонс</a>
+        <nav aria-label="Аккаунт">
+            {{#if LoggedIn}}
+                {{#if IsAdmin}}<a href="/admin">Управление</a>{{/if}}
+                <a href="/favorites">Избранное</a>
+                <form method="post" action="/logout">
+                    <input type="hidden" name="csrf" value="{{CsrfToken}}">
+                    <button class="link-button" type="submit">Выйти <span class="sr-only">из аккаунта {{Username}}</span></button>
+                </form>
+            {{else}}
+                <a href="/login">Войти</a>
+                <a href="/register">Регистрация</a>
+            {{/if}}
+        </nav>
+    </div>
+</header>
+<main class="main">
+    <h1>Галерея карт</h1>
+    <div class="filters" aria-label="Фильтры галереи">
+        <label class="filter-search">Поиск по названию
+            <input id="search" type="search" placeholder="Название карточки" maxlength="200">
+        </label>
+        <label>Тип
+            <select id="supertype">
+                <option value="">Все типы</option>
+                {{#each Types}}<option value="{{Name}}">{{Name}}</option>{{/each}}
+            </select>
+        </label>
+        <label>Сортировка
+            <select id="sort">
+                <option value="asc">По алфавиту</option>
+                <option value="desc">В обратном порядке</option>
+            </select>
+        </label>
+        <button type="button" id="reset">Сбросить</button>
+        <button type="button" id="refresh">Обновить</button>
+    </div>
+    <p class="card-count" id="cardCount" aria-live="polite">
+        {{#if Cards}}Карточек в каталоге: {{CardCount}}{{else}}В каталоге пока нет карточек.{{/if}}
+    </p>
+    <p class="message" id="galleryMessage" role="status"></p>
+    <section id="cardsGrid" class="cards-grid" aria-label="Карточки">
+        {{#each Cards}}
+        <a class="game-card" href="/cards/{{Id}}" data-title="{{Title}}" data-type="{{CardType}}">
+            <img src="{{ImageUrl}}" alt="" width="380" height="552" loading="lazy">
+            <h2>{{Title}}</h2>
+        </a>
+        {{/each}}
+    </section>
+</main>
+</body>
+</html>

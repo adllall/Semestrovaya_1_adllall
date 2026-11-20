@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{CsrfToken}}">
+    <title>Управление каталогом — Респонс</title>
+    <link rel="stylesheet" href="/css/gallery.css">
+    <script src="/js/admin.js" defer></script>
+</head>
+<body>
+<header class="header">
+    <div class="header-top">
+        <a class="logo" href="/">Респонс</a>
+        <nav aria-label="Аккаунт">
+            <a href="/">Галерея</a>
+            <form method="post" action="/logout">
+                <input type="hidden" name="csrf" value="{{CsrfToken}}">
+                <button class="link-button" type="submit">Выйти <span class="sr-only">из аккаунта {{Username}}</span></button>
+            </form>
+        </nav>
+    </div>
+</header>
+<main class="main detail-page">
+    <h1>Управление каталогом</h1>
+    <noscript><p class="message error-text">Для управления каталогом включите JavaScript.</p></noscript>
+    <p id="adminStatus" class="message" role="status"></p>
+    <div class="admin-columns">
+        <section aria-labelledby="cardsTitle">
+            <h2 id="cardsTitle">Карточки</h2>
+            <form id="cardForm" class="panel admin-form" method="post" novalidate>
+                <h3 id="cardFormTitle">Новая карточка</h3>
+                <label>Название
+                    <input name="title" minlength="2" maxlength="200" required>
+                    <span class="field-error" data-error="title"></span>
+                </label>
+                <label>Тип карточки
+                    <input name="cardType" maxlength="100" list="cardTypes" required>
+                    <datalist id="cardTypes"></datalist>
+                    <span class="field-error" data-error="cardType"></span>
+                </label>
+                <label>Категория
+                    <select name="categoryId" required></select>
+                    <span class="field-error" data-error="categoryId"></span>
+                </label>
+                <label>Путь к изображению
+                    <input name="imageUrl" maxlength="255" placeholder="/images/Avel.jpg" required>
+                    <span class="field-error" data-error="imageUrl"></span>
+                </label>
+                <div class="editor-field">
+                    <span id="descriptionLabel">Описание</span>
+                    <div class="editor-tools" role="group" aria-label="Форматирование описания">
+                        <button type="button" data-format="b"><strong>Полужирный</strong></button>
+                        <button type="button" data-format="i"><em>Курсив</em></button>
+                    </div>
+                    <div id="descriptionEditor" class="editor" contenteditable="true" role="textbox"
+                         aria-labelledby="descriptionLabel" aria-describedby="descriptionCount" aria-multiline="true" spellcheck="true"></div>
+                    <p id="descriptionCount" class="muted counter">0 / 2000</p>
+                    <span class="field-error" data-error="description"></span>
+                </div>
+                <p class="message" data-form-message role="status"></p>
+                <div class="actions">
+                    <button class="primary" type="submit">Сохранить карточку</button>
+                    <button class="secondary" type="button" data-reset hidden>Отменить редактирование</button>
+                </div>
+            </form>
+            <ul id="cardsList" class="entry-list" aria-label="Карточки каталога"></ul>
+        </section>
+        <section aria-labelledby="categoriesTitle">
+            <h2 id="categoriesTitle">Категории</h2>
+            <form id="categoryForm" class="panel admin-form" method="post" novalidate>
+                <h3 id="categoryFormTitle">Новая категория</h3>
+                <label>Название
+                    <input name="name" minlength="2" maxlength="100" required>
+                    <span class="field-error" data-error="name"></span>
+                </label>
+                <label>Описание
+                    <textarea name="description" rows="3" maxlength="1000" required></textarea>
+                    <span class="field-error" data-error="description"></span>
+                </label>
+                <label>Порядок
+                    <input name="sortOrder" type="number" min="0" max="9999" step="1" value="0" required>
+                    <span class="field-error" data-error="sortOrder"></span>
+                </label>
+                <p class="message" data-form-message role="status"></p>
+                <div class="actions">
+                    <button class="primary" type="submit">Сохранить категорию</button>
+                    <button class="secondary" type="button" data-reset hidden>Отменить редактирование</button>
+                </div>
+            </form>
+            <ul id="categoriesList" class="entry-list" aria-label="Категории каталога"></ul>
+        </section>
+    </div>
+</main>
+</body>
+</html>

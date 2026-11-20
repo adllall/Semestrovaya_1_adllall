@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Карточки — Response Game</title>
+    <a href="/spoiler">Посмотреть карточки</a>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f3ef;
+            margin: 0;
+            padding: 40px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .cards {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .card {
+            width: 260px;
+            padding: 24px;
+            border-radius: 16px;
+            background: white;
+            box-shadow: 0 4px 15px #00000015;
+            text-decoration: none;
+            color: black;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+<section>
+    {{#if HasCards}}
+    <p>В коллекции {{CardCount}} карточек</p>
+
+    <ul>
+        {{#each FirstCards}}
+        <li>{{Title}}</li>
+        {{/each}}
+    </ul>
+    {{else}}
+    <p>Карточек пока нет.</p>
+    {{/if}}
+</section>
+<h1>Карточки Response Game</h1>
+
+<div class="cards">
+    <a href="/cards/1" class="card">
+        <h2>Карточка №1</h2>
+        <p>Нажми, чтобы узнать подробнее</p>
+    </a>
+</div>
+</body>
+</html>

@@ -1,0 +1,60 @@
+BEGIN;
+INSERT INTO categories (id, name, description, sort_order) VALUES (1, 'Карты Response Game', 'Галерея карт', 1) ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (1, 1, 'Авель, Охотник на нежить', '', '/images/Avel.jpg', 'Герой') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (2, 1, 'Агрессивный взгляд', '', '/images/Agressive_vzor.jpg', 'Заклинание') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (3, 1, 'Адепт раздора', '', '/images/Adept_razdor.jpg', 'Юнит') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (4, 1, 'Адепт регламента', '', '/images/Adept_reglament.jpg', 'Юнит') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (5, 1, 'Адская корова', '', '/images/Adskay_cow.jpg', 'Юнит') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (6, 1, 'Азарион, Пересмешник', '', '/images/Azarion.jpg', 'Герой') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (7, 1, 'Алтарь предков', '', '/images/Altar.jpg', 'Усиление') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (8, 1, 'Аналитический шлем', '', '/images/Analitic_shlem.jpg', 'Усиление') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (9, 1, 'Анализатор потенционала', '', '/images/Analyz_potentional.jpg', 'Юнит') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (10, 1, 'Аннигиляция', '', '/images/Anigilyciy.jpg', 'Заклинание') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (11, 1, 'Аск`Азан, Нетленный', '', '/images/AskAzan.jpg', 'Герой') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (12, 1, 'Бегущий по лаве', '', '/images/BegushiLava.jpg', 'Юнит') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (13, 1, 'Безумный матрос', '', '/images/BezumniMatros.jpg', 'Юнит') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (14, 1, 'Безумный пироман', '', '/images/BezumniPiroman.jpg', 'Юнит') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (15, 1, 'Бьёрн, Усилитель', '', '/images/BiernUsiliti.jpg', 'Герой') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (16, 1, 'Большой пожар', '', '/images/BigPozar.jpg', 'Заклинание') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (17, 1, 'Большой зомби', '', '/images/BigZombie.jpg', 'Юнит') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (18, 1, 'Благословение войны', '', '/images/BlagoslovVoini.jpg', 'Усиление') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (19, 1, 'Боевой штандарт', '', '/images/BoiShtandart.jpg', 'Усиление') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (20, 1, 'Болотное чудище', '', '/images/BolotoShudiche.jpg', 'Юнит') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (21, 1, 'Бон`та, Техномант', '', '/images/BontaTech.jpg', 'Герой') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (22, 1, 'Боселот, Изгнанный рыцарь', '', '/images/Boselot.jpg', 'Герой') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (23, 1, 'Буйный рост', '', '/images/BuiniPost.jpg', 'Заклинание') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (24, 1, 'Бурлящая кровь', '', '/images/BurlBlood.jpg', 'Усиление') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (25, 1, 'Возвращающийся', '', '/images/Return.jpg', 'Юнит') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (26, 1, 'Возвращение', '', '/images/Return2.jpg', 'Заклинание') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (27, 1, 'Возвращение к нежизни', '', '/images/ReturnKLive.jpg', 'Заклинание') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (28, 1, 'Валсот Явс, Одинокий рыцарь', '', '/images/ValsotYvs.jpg', 'Герой') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (29, 1, 'Ведьма культа Эно', '', '/images/VedmaEno.jpg', 'Юнит') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (30, 1, 'Верховный приговор', '', '/images/VerhPrigovor.jpg', 'Заклинание') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (31, 1, 'Верный рыцарь', '', '/images/VerniRicar.jpg', 'Юнит') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (32, 1, 'Верзила из ущелья', '', '/images/Verzila.jpg', 'Юнит') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (33, 1, 'Видение Космоса', '', '/images/VideniCosmos.jpg', 'Усиление') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (34, 1, 'Власть судьбы', '', '/images/VlastSudbi.jpg', 'Заклинание') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (35, 1, 'Влияние хаоса', '', '/images/VliyniXaos.jpg', 'Усиление') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (36, 1, 'Взломщик Лин`Ндор', '', '/images/VlomshikLindor.jpg', 'Герой') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (37, 1, 'Вок`Ниов, Чародей-иной', '', '/images/Vokniov.jpg', 'Герой') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (38, 1, 'Восставший капитан', '', '/images/VostavshiCap.jpg', 'Юнит') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (39, 1, 'Взгляд в бездну', '', '/images/VzglydVBezdnu.jpg', 'Заклинание') ON CONFLICT DO NOTHING;
+INSERT INTO cards (id, category_id, title, description, image_url, card_type) VALUES (40, 1, 'Взрыв эссенции', '', '/images/VzrivEssention.jpg', 'Заклинание') ON CONFLICT DO NOTHING;
+DO $sync$
+DECLARE
+    entry text;
+    sequence_name text;
+    sequence_max bigint;
+    table_max bigint;
+BEGIN
+    FOREACH entry IN ARRAY ARRAY['categories', 'cards'] LOOP
+        sequence_name := pg_get_serial_sequence(entry, 'id');
+        EXECUTE format('SELECT last_value FROM %s', sequence_name) INTO sequence_max;
+        EXECUTE format('SELECT max(id) FROM %I', entry) INTO table_max;
+        IF table_max IS NOT NULL THEN
+            PERFORM setval(sequence_name::regclass, greatest(sequence_max, table_max));
+        END IF;
+    END LOOP;
+END;
+$sync$;
+COMMIT;

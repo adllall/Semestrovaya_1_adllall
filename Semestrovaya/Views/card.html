@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{Title}} — Респонс</title>
+    <link rel="stylesheet" href="/css/gallery.css">
+</head>
+<body>
+<header class="header">
+    <div class="header-top">
+        <a class="logo" href="/">Респонс</a>
+        <nav aria-label="Аккаунт">
+            {{#if LoggedIn}}<a href="/favorites">Избранное</a>{{else}}<a href="/login">Войти</a>{{/if}}
+        </nav>
+    </div>
+</header>
+<main class="main detail-page">
+    <a class="back-link" href="/">← К галерее</a>
+    <article class="card-detail panel">
+        <img class="detail-image" src="{{ImageUrl}}" alt="{{Title}}" width="380" height="552">
+        <div class="card-info">
+            <h1>{{Title}}</h1>
+            <p class="tags"><span>{{CardType}}</span>{{#if Category}}<span>{{Category}}</span>{{/if}}</p>
+            <div class="card-description">{{{Description}}}</div>
+            {{#if LoggedIn}}
+            <section class="favorite-section" aria-label="Избранное">
+                {{#if Success}}<p class="message success" role="status">Карточка сохранена в избранном.</p>{{/if}}
+                <form method="post" action="/favorites/{{Id}}">
+                    <input type="hidden" name="csrf" value="{{CsrfToken}}">
+                    <label for="favoriteNote">Личная заметка <span class="muted">(необязательно)</span></label>
+                    <textarea id="favoriteNote" name="note" maxlength="500" rows="3">{{Note}}</textarea>
+                    <button class="primary" type="submit">{{#if Saved}}Обновить заметку{{else}}Добавить в избранное{{/if}}</button>
+                </form>
+            </section>
+            {{else}}
+            <p class="favorite-section"><a href="/login">Войдите</a>, чтобы сохранить карточку в избранном.</p>
+            {{/if}}
+        </div>
+    </article>
+</main>
+</body>
+</html>
